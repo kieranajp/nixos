@@ -7,6 +7,8 @@
     # ./i3.nix
     # ./redshift.nix
     ./starship.nix
+    ./helix.nix
+    # ./tailscale.nix
     # ./direnv.nix
     # ./fish.nix
     # ./neovim.nix
@@ -21,6 +23,9 @@
     zip
     unzip
     neofetch
+    jq
+    tmux
+    helix
   ];
 
   home.stateVersion = "23.05";
