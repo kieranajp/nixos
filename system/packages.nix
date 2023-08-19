@@ -4,6 +4,7 @@
   environment.systemPackages = with pkgs; [
     vim
     git
+    mosh
     curl
     wget
     htop
@@ -12,6 +13,7 @@
     vscode-fhs
     duplicacy
     openssl
+    tailscale
   ];
 
   programs = {
@@ -28,4 +30,6 @@
       enable = true;
     };
   };
+
+  services.tailscale.enable = true;
 }
