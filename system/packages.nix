@@ -4,7 +4,6 @@
   environment.systemPackages = with pkgs; [
     vim
     git
-    mosh
     curl
     wget
     htop
@@ -24,6 +23,10 @@
     _1password-gui = {
       enable = true;
       polkitPolicyOwners = ["kieran"];
+    };
+
+    mosh = {
+      enable = true;
     };
 
     thunar = {
