@@ -4,13 +4,13 @@
     ./cursor.nix
     ./git.nix
     ./ssh
-    # ./i3.nix
+    ./i3.nix
     # ./redshift.nix
     ./starship.nix
     ./helix.nix
     # ./tailscale.nix
     # ./direnv.nix
-    # ./fish.nix
+    ./fish.nix
     # ./neovim.nix
     # ./git.nix
     # ./taskwarrior.nix
@@ -25,7 +25,7 @@
     neofetch
     jq
     tmux
-    helix
+    fzf
   ];
 
   home.stateVersion = "23.05";

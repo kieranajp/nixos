@@ -37,8 +37,11 @@
     LC_TIME = "en_GB.UTF-8";
   };
 
+  programs.fish.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.kieran = {
+    shell = pkgs.fish;
     isNormalUser = true;
     description = "Kieran";
     extraGroups = [ "networkmanager" "wheel" "docker" ];

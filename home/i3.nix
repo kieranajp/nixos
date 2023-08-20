@@ -1,22 +1,44 @@
-{ config, lib, pkgs, ... }:
+{ lib, pkgs, ... }: 
 
 let 
   mod = "Mod4";
+
+  term = "st";
+  
 in {
-  services.xserver.windowManager.i3 = {
-    # config = {
-    #   modifier = mod;
+  xsession.enable = true;
 
-    #   fonts = [ "pango:Hack Nerd Font Mono, FontAwesome 10" ];
+  xsession.windowManager.i3 = {
+    enable = true;
+    package = pkgs.i3-gaps;
 
-    #   title_align = "center";
+    config = {
+      modifier = mod;
 
-    #   gaps = {
-    #     inner = 30;
-    #     outer = 10;
-    #     top = 0;
-    #     bottom = 0;
-    #   };
-    # };
+      fonts = [ "pango:Hack Nerd Font Mono, FontAwesome 10" ];
+
+      gaps = {
+        inner = 30;
+        outer = 10;
+        top = 0;
+        bottom = 0;
+      };
+
+      keybindings = lib.mkOptionDefault {
+        #
+        # launch shortcuts
+        #
+        "${mod}+Return" = "exec --no-startup-id ${term}";
+        
+        #
+        # i3 base stuff
+        #
+        # Reload
+        "${mod}+Shift+r" = "restart";
+
+        # Kill
+        "${mod}+q" = "kill";
+      };
+    };
   };
 }
