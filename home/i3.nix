@@ -18,6 +18,7 @@ in {
     package = pkgs.i3-gaps;
 
     config = {
+    
       modifier = mod;
 
       fonts = [ "pango:Hack Nerd Font Mono, FontAwesome 10" ];
