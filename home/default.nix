@@ -26,6 +26,7 @@
     jq
     tmux
     fzf
+    bat
   ];
 
   home.stateVersion = "23.05";

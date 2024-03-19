@@ -13,6 +13,7 @@
     duplicacy
     openssl
     tailscale
+    liquidctl # For controlling AIO
   ];
 
   programs = {
