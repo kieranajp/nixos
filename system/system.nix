@@ -47,7 +47,6 @@
     packages = with pkgs; [];
   };
 
-  security.polkit.enable = true;
   systemd.services.NetworkManager-wait-online.enable = false;
 
   # Disable screen auto off

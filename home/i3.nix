@@ -25,9 +25,16 @@ in {
         size = 11.0;
       };
 
+      startup = [
+        {
+          command = "feh --bg-scale /home/kieran/Pictures/Wallpapers/cyberpunk-streets.png";
+          notification = false;
+        }
+      ];
+
       gaps = {
-        inner = 30;
-        outer = 10;
+        inner = 10;
+        outer = 8;
         top = 0;
         bottom = 0;
       };
@@ -116,5 +123,10 @@ in {
         };
       };
     };
+
+    extraConfig = ''
+      # Hide title bars
+      for_window [class=".*"] border pixel 1
+    '';
   };
 }

@@ -8,6 +8,7 @@
     wget
     htop
     google-chrome
+    feh
     kbs2
     vscode-fhs
     duplicacy
