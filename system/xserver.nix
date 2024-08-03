@@ -1,12 +1,12 @@
 { config, pkgs, callPackage, ... }: {
 
-  services.xserver = {
-    enable = true;
-    autorun = true;
-    layout = "us";
-    # xkbOptions = "caps:swapescape"; # Swap caps-lock with escape.
-    videoDrivers = [ "nvidia" ];
-    
+  services = {
+
+    displayManager = {
+      defaultSession = "xsession";
+      sddm.autoNumlock = true;
+    };
+
     libinput = {
       enable = true;
       mouse = {
@@ -15,25 +15,27 @@
       };
     };
 
-    displayManager = {
-      defaultSession = "xsession";
-      sddm.autoNumlock = true;
+    xserver = {
+      enable = true;
+      autorun = true;
+      videoDrivers = [ "nvidia" ];
+
+      xkb = {
+        layout = "us";
+        # options = "caps:swapescape"; # Swap caps-lock with escape.
+      };
+
+      desktopManager.session = [
+        {
+          name = "xsession";
+          start = ''
+            ${pkgs.runtimeShell} $HOME/.xsession &
+            waitPID=$!
+          '';
+        }
+      ];
     };
 
-    # windowManager.i3 = {
-      # enable = true;
-      # package = pkgs.i3-gaps;
-    # };
-
-    desktopManager.session = [
-      {
-        name = "xsession";
-        start = ''
-          ${pkgs.runtimeShell} $HOME/.xsession &
-          waitPID=$!
-        '';
-      }
-    ];
   };
 
   console.useXkbConfig = true;

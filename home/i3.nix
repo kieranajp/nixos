@@ -1,6 +1,6 @@
-{ lib, pkgs, ... }: 
+{ lib, pkgs, ... }:
 
-let 
+let
   mod = "Mod4";
 
   term = "st";
@@ -18,10 +18,12 @@ in {
     package = pkgs.i3-gaps;
 
     config = {
-    
       modifier = mod;
 
-      fonts = [ "pango:Hack Nerd Font Mono, FontAwesome 10" ];
+      fonts = {
+        names = [ "pango:Hack Nerd Font Mono" "FontAwesome" ];
+        size = 11.0;
+      };
 
       gaps = {
         inner = 30;
@@ -75,7 +77,7 @@ in {
         #
         "${mod}+Return" = "exec --no-startup-id ${term}";
         "${mod}+Shift+Return" = "exec --no-startup-id ${browser}";
-        
+
         #
         # i3 base stuff
         #
