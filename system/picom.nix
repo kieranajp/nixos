@@ -8,10 +8,10 @@
       corner-radius = 12;
       round-borders = 8;
       fading = false;
+      active-opacity = 0.95;
       inactive-opacity = 0.8;
       frame-opacity = 0.7;
       inactive-opacity-override = false;
-      active-opacity = 1.0;
 
       blur-kern = "3x3box";
       blur = {
