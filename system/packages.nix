@@ -14,6 +14,9 @@
     openssl
     tailscale
     liquidctl # For controlling AIO
+    jetbrains.jdk
+    jetbrains.goland
+    jetbrains.phpstorm
   ];
 
   programs = {
