@@ -30,6 +30,10 @@
       polkitPolicyOwners = ["kieran"];
     };
 
+    dconf = {
+      enable = true;
+    };
+
     fish = {
       enable = true;
     };

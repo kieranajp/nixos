@@ -3,6 +3,7 @@
   imports = [
     ./cursor.nix
     ./git.nix
+    ./gtk.nix
     ./ssh
     ./i3.nix
     # ./redshift.nix
@@ -12,7 +13,6 @@
     # ./direnv.nix
     ./fish.nix
     # ./neovim.nix
-    # ./git.nix
     # ./taskwarrior.nix
   ];
 
