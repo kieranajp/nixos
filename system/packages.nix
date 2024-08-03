@@ -26,6 +26,10 @@
       polkitPolicyOwners = ["kieran"];
     };
 
+    fish = {
+      enable = true;
+    };
+
     mosh = {
       enable = true;
     };
